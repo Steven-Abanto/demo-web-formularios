@@ -20,13 +20,14 @@
               th:object="${imcmodel}">
             <div class="mb-3">
                 <label for="txttalla" class="form-label">Ingrese su Talla:</label>
-                <input type="number" class="form-control" id="txttalla" placeholder="name@example.com">
+                <input type="number" th:field="*{Talla}" class="form-control" id="txttalla" placeholder="Ingrese su talla...">
             </div>
             <div class="mb-3">
                 <label for="txtpeso" class="form-label">Ingrese su peso:</label>
-                <input type="number" class="form-control" id="txtpeso" placeholder="name@example.com">
+                <input type="number" th:field="*{Peso}" class="form-control" id="txtpeso" placeholder="Ingrese su peso...">
             </div>
-            <button type="button" class="btn btn-primary">CALCULAR</button>
+            <button type="submit"
+                    class="btn btn-primary">CALCULAR</button>
         </form>
         
     </div>
