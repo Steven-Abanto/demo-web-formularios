@@ -10,7 +10,7 @@
 <body>
 
 <div class="card">
-    <div class="card-header">
+    <div class="card-header" >
         CALCULADORA IMC
     </div>
     <div class="card-body">
@@ -18,18 +18,20 @@
              th:object = mapea un objeto (usa $) de enviado desde el controlador -->
         <form th:action="@{/calcularimc}" method="post"
               th:object="${imcmodel}">
-            <div class="mb-3">
+            <div class="mb-3" style="width: 30rem;">
                 <label for="txttalla" class="form-label">Ingrese su Talla:</label>
                 <input type="number" th:field="*{Talla}" class="form-control" id="txttalla" placeholder="Ingrese su talla...">
             </div>
-            <div class="mb-3">
+            <div class="mb-3" style="width: 30rem;">
                 <label for="txtpeso" class="form-label">Ingrese su peso:</label>
                 <input type="number" th:field="*{Peso}" class="form-control" id="txtpeso" placeholder="Ingrese su peso...">
             </div>
             <button type="submit"
                     class="btn btn-primary">CALCULAR</button>
         </form>
-        
+        <div th:if="${visualizaralerta}" class="alert" th:classappend="${estilodiagnostico}" role="alert" style="width: 30rem;">
+            <span th:text="${Resultado} ?:''"></span>
+        </div>
     </div>
 </div>
 
